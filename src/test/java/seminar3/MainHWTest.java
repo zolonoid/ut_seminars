@@ -11,13 +11,25 @@ class MainHWTest {
 
     @ParameterizedTest
     @ValueSource(ints = {4, 6, 8})
-    void isNumberEven(int number) {
-        assertTrue(MainHW.isNumberEven(number));
+    void testEvenOddNumberWithEven(int number) {
+        assertTrue(MainHW.evenOddNumber(number));
+    }
+
+    @ParameterizedTest
+    @ValueSource(ints = {3, 5, 9})
+    void testEvenOddNumberWithOdd(int number) {
+        assertFalse(MainHW.evenOddNumber(number));
     }
 
     @ParameterizedTest
     @ValueSource(ints = {25, 50, 100})
-    void isNumberInRange(int number) {
-        assertTrue(MainHW.isNumberInRange(number));
+    void testNumberInInterval(int number) {
+        assertTrue(MainHW.numberInInterval(number));
+    }
+
+    @ParameterizedTest
+    @ValueSource(ints = {20, 0, 110})
+    void testNotNumberInInterval(int number) {
+        assertFalse(MainHW.numberInInterval(number));
     }
 }
